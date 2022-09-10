@@ -34,6 +34,12 @@ router.post("/signup", async (req, res, next) => {
     no: req.body.no,
     email: req.body.email,
     nombre: req.body.nombre,
+    apellido: req.body.apellido,
+    cedula: req.body.cedula,
+    telefono: req.body.telefono,
+    provincia: req.body.provincia,
+    sector: req.body.sector,
+    quiero: req.body.quiero,
     grupo: req.body.grupo,
     puedeVer: req.body.puedeVer,
     aseguradoras: req.body.aseguradoras,
@@ -46,11 +52,11 @@ router.post("/signup", async (req, res, next) => {
     if (err) {
       return res.status(400).json({
         title: "Error",
-        error: "Ya Existe un Usuario Registrado con este Email",
+        error: "Ya Existe un Usuario Registrado con este Email o con esta Cédula",
       });
     }
     return res.status(200).json({
-      title: "Signup Success",
+      title: "Usuario Registrado Exitosamente",
     });
   });
 });
